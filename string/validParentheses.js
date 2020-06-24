@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function (s) {
+var isValid1 = function (s) {
 	if (s.length === 0) {
 		return true; // TODO or should be false?
 	}
@@ -59,7 +59,7 @@ var isValid = function (s) {
  * @param {string} s
  * @return {boolean}
  */
-var isValid1 = function (s) {
+var isValid2 = function (s) {
 	if (s.length === 0) {
 		return true;
 	}
@@ -71,7 +71,6 @@ var isValid1 = function (s) {
 
 	let result;
 
-	//const parentheses = new Map([['{', '}'], ['(', ')'], ['[', ']']]);
 	const parentheses = ['{}', '[]', '()'];
 
 	function check(s) {
@@ -107,7 +106,7 @@ var isValid1 = function (s) {
  * @param {string} s
  * @return {boolean}
  */
-var isValid2 = function (s) {
+var isValid = function (s) {
 	const stack = [];
 	const keys = {
 		'(': ')',
@@ -127,13 +126,24 @@ var isValid2 = function (s) {
 
 };
 
-const s1 = '()[]{}';
+const s1 = '{{}{()}}[]';
+const s4 = '({[]})';
 const s2 = '(]';
 const s3 = '([)]';
-const s4 = '{[]}';
 const s5 = '{[(])}';
 const s6 = '{';
 const s7 = '[]}{';
+
+
+
+/*
+console.log('isValid', isValid(s1));
+console.log('isValid', isValid(s4));
+console.log('isValid', isValid(s2));
+console.log('isValid', isValid(s3));
+console.log('isValid', isValid(s5));
+console.log('isValid', isValid(s6));
+console.log('isValid', isValid(s7));*/
 
 
 console.time('isValid');
