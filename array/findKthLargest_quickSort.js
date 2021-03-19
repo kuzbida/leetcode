@@ -33,7 +33,7 @@ function swap(array, a, b) {
  * @param {number} k
  * @return {number}
  */
-var findKthLargest = function (nums, k) {
+var findKthLargest_quickSort = function (nums, k) {
     if (nums.length === 1) {
         return nums[0];
     }
@@ -42,7 +42,7 @@ var findKthLargest = function (nums, k) {
     return nums[nums.length - k];
 };
 
-console.log(findKthLargest([3,2,1,5,6,4], 2));
-console.log(findKthLargest([3,2,3,1,2,4,5,5,6], 4));
-console.log(findKthLargest([2,1], 1));
-console.log(findKthLargest([3,1,2,4], 2));
+console.log(findKthLargest_quickSort([3,2,1,5,6,4], 2));
+console.log(findKthLargest_quickSort([3,2,3,1,2,4,5,5,6], 4));
+console.log(findKthLargest_quickSort([2,1], 1));
+console.log(findKthLargest_quickSort([3,1,2,4], 2));
