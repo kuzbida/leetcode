@@ -1,0 +1,37 @@
+console.log('script start'); // 1
+
+fs.readFile('./text.txt', () => {
+    console.log('io');
+});
+
+setImmediate(() => {
+    console.log('immediate'); //5
+});
+
+setTimeout(() => {
+    console.log('timeout'); //2 
+});
+
+process.nextTick(() => {
+    console.log('nextTick'); //3 
+});
+
+new Promise(resolve => {
+    console.log('promise start');//4 => //2
+    resolve('promise end'); //6
+}).then(console.log); 
+
+(async () => {
+    const result = await Promise.resolve('foo')
+    console.info(result) //7
+})()
+
+console.log('script end'); //8 => //3
+
+
+// CI/CD
+
+// Refactoring
+
+// Micro/Macro tasks
+
